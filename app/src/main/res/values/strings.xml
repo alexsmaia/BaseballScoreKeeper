@@ -1,3 +1,23 @@
 <resources>
+    <!-- Header Title -->
     <string name="app_name">Baseball Score Keeper</string>
+    <!--  Innings -->
+    <string name="innings">Inning:</string>
+    <!-- Teams Title -->
+    <string name="home">Home</string>
+    <string name="visitor">Visitor</string>
+    <!-- Secundary counters -->
+    <string name="balls">Balls</string>
+    <string name="strikes">Strikes</string>
+    <string name="outs">Outs</string>
+    <!-- Buttons -->
+    <string name="ball">Ball</string>
+    <string name="strike">Strike</string>
+    <string name="out">Out</string>
+    <string name="run">Run</string>
+    <string name="reset">Reset</string>
+    <!-- Toasts -->
+    <string name="toast_balls">4 Balls -> Player Walk</string>
+    <string name="toast_strikes">3 Strikes -> Player Out</string>
+    <string name="toast_outs">3 Outs -> Inning Change</string>
 </resources>

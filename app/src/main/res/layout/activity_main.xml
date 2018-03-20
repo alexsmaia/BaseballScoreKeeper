@@ -1,18 +1,318 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical"
     tools:context="com.example.android.baseballscorekeeper.MainActivity">
 
-    <TextView
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp">
+
+        <ImageView
+            android:id="@+id/ballTop"
+            style="@style/ball"
+            android:layout_alignParentLeft="true"/>
+
+        <TextView
+            android:id="@+id/innings"
+            style="@style/Innings"
+            android:text="@string/innings"
+            android:textColor="#ffffff"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/inningsCount"
+            style="@style/Innings"
+            android:paddingLeft="16dp"
+            android:text="1"
+            android:layout_toRightOf="@+id/innings" />
+
+        <ImageView
+            android:id="@+id/ballBottom"
+            style="@style/ball"
+            android:layout_alignParentRight="true"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="4dp">
+
+        <LinearLayout style="@style/Columns">
+
+            <TextView
+                style="@style/TeamName"
+                android:text="@string/home" />
+
+            <TextView
+                android:id="@+id/runsHome"
+                style="@style/Points"
+                android:text="0"
+                android:layout_toRightOf="@+id/ballHomeLabel" />
+
+            <ImageView
+                android:id="@+id/winnerHome"
+                style="@style/winner"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:id="@+id/secBoxHome"
+                style="@style/ColumnsSecBox">
+
+                <Button
+                    android:id="@+id/runHomeBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/run"
+                    android:onClick="addRun" />
+
+                <LinearLayout
+                    android:id="@+id/ballHomeBox"
+                    style="@style/LinearCounterBox"
+                    android:visibility="gone" >
+
+                    <RelativeLayout style="@style/RelativeCounterBox">
+
+                        <TextView
+                            android:id="@+id/ballHomeLabel"
+                            style="@style/SecundaryScoreLabel"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/balls" />
+
+                        <TextView
+                            android:id="@+id/ballHomeCount"
+                            style="@style/SecundaryScoreCount"
+                            android:layout_toRightOf="@+id/ballHomeLabel"
+                            android:text="0" />
+
+                    </RelativeLayout>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:onClick="addBall"
+                        android:text="@string/ball" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/strikeHomeBox"
+                    style="@style/LinearCounterBox" >
+
+                    <RelativeLayout style="@style/RelativeCounterBox">
+
+                        <TextView
+                            android:id="@+id/strikeHomeLabel"
+                            style="@style/SecundaryScoreLabel"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/strikes" />
+
+                        <TextView
+                            android:id="@+id/strikeHomeCount"
+                            style="@style/SecundaryScoreCount"
+                            android:layout_toRightOf="@+id/strikeHomeLabel"
+                            android:text="0" />
+
+                    </RelativeLayout>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:onClick="addStrike"
+                        android:text="@string/strike" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/outHomeBox"
+                    style="@style/LinearCounterBox" >
+
+                    <RelativeLayout style="@style/RelativeCounterBox">
+
+                        <TextView
+                            android:id="@+id/outHomeLabel"
+                            style="@style/SecundaryScoreLabel"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/outs" />
+
+                        <TextView
+                            android:id="@+id/outHomeCount"
+                            style="@style/SecundaryScoreCount"
+                            android:layout_toRightOf="@+id/outHomeLabel"
+                            android:text="0" />
+
+                    </RelativeLayout>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:onClick="addOut"
+                        android:text="@string/out" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="match_parent"
+            android:contentDescription="Baseball Bat"
+            android:scaleType="centerInside"
+            android:src="@drawable/bat" />
+
+        <LinearLayout style="@style/Columns">
+
+            <TextView
+                style="@style/TeamName"
+                android:text="@string/visitor" />
+
+            <TextView
+                android:id="@+id/runsVisitor"
+                style="@style/Points"
+                android:text="0" />
+
+            <ImageView
+                android:id="@+id/winnerVisitor"
+                style="@style/winner"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:id="@+id/secBoxVisitor"
+                style="@style/ColumnsSecBox">
+
+                <Button
+                    android:id="@+id/runVisitorBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/run"
+                    android:visibility="gone"
+                    android:onClick="addRun"  />
+
+                <LinearLayout
+                    android:id="@+id/ballVisitorBox"
+                    style="@style/LinearCounterBox" >
+
+                    <RelativeLayout style="@style/RelativeCounterBox">
+
+                        <TextView
+                            android:id="@+id/ballVisitorLabel"
+                            style="@style/SecundaryScoreLabel"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/balls" />
+
+                        <TextView
+                            android:id="@+id/ballVisitorCount"
+                            style="@style/SecundaryScoreCount"
+                            android:layout_toRightOf="@+id/ballVisitorLabel"
+                            android:text="0" />
+
+                    </RelativeLayout>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:onClick="addBall"
+                        android:text="@string/ball" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/strikeVisitorBox"
+                    style="@style/LinearCounterBox"
+                    android:visibility="gone" >
+
+                    <RelativeLayout style="@style/RelativeCounterBox">
+
+                        <TextView
+                            android:id="@+id/strikeVisitorLabel"
+                            style="@style/SecundaryScoreLabel"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/strikes" />
+
+                        <TextView
+                            android:id="@+id/strikeVisitorCount"
+                            style="@style/SecundaryScoreCount"
+                            android:layout_toRightOf="@+id/strikeVisitorLabel"
+                            android:text="0" />
+
+                    </RelativeLayout>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:onClick="addStrike"
+                        android:text="@string/strike" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/outVisitorBox"
+                    style="@style/LinearCounterBox"
+                    android:visibility="gone" >
+
+                    <RelativeLayout style="@style/RelativeCounterBox">
+
+                        <TextView
+                            android:id="@+id/outVisitorLabel"
+                            style="@style/SecundaryScoreLabel"
+                            android:layout_centerHorizontal="true"
+                            android:text="@string/outs" />
+
+                        <TextView
+                            android:id="@+id/outVisitorCount"
+                            style="@style/SecundaryScoreCount"
+                            android:layout_toRightOf="@+id/outVisitorLabel"
+                            android:text="0" />
+
+                    </RelativeLayout>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:onClick="addOut"
+                        android:text="@string/out" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_gravity="center"
+        android:onClick="reset"
+        android:text="@string/reset"
+        android:layout_marginBottom="16dp"/>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

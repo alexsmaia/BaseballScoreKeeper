@@ -19,6 +19,7 @@
         <ImageView
             android:id="@+id/ballTop"
             style="@style/ball"
+            android:contentDescription="Baseball Ball"
             android:layout_alignParentLeft="true"/>
 
         <TextView
@@ -38,6 +39,7 @@
         <ImageView
             android:id="@+id/ballBottom"
             style="@style/ball"
+            android:contentDescription="Baseball Ball"
             android:layout_alignParentRight="true"
             android:visibility="gone" />
 
@@ -65,6 +67,7 @@
             <ImageView
                 android:id="@+id/winnerHome"
                 style="@style/winner"
+                android:contentDescription="Winner stamp"
                 android:visibility="gone"/>
 
             <LinearLayout
@@ -195,6 +198,7 @@
             <ImageView
                 android:id="@+id/winnerVisitor"
                 style="@style/winner"
+                android:contentDescription="Winner stamp"
                 android:visibility="gone"/>
 
             <LinearLayout

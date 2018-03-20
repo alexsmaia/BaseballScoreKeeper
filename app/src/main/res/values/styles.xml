@@ -13,7 +13,6 @@
     <style name="ball">
         <item name="android:layout_width">32dp</item>
         <item name="android:layout_height">32dp</item>
-        <item name="android:contentDescription">Baseball Ball</item>
         <item name="android:scaleType">centerInside</item>
         <item name="android:src">@drawable/ball</item>
     </style>
@@ -21,7 +20,6 @@
     <style name="winner">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">200dp</item>
-        <item name="android:contentDescription">Winner</item>
         <item name="android:scaleType">centerInside</item>
         <item name="android:src">@drawable/winner</item>
     </style>
